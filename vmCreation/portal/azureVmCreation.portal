@@ -1,0 +1,67 @@
+Step-by-Step Guide to Create a Virtual Machine in the Azure Portal
+
+    Log in to the Azure Portal
+
+    Navigate to Virtual Machines
+        In the left-hand navigation menu, click on "Virtual Machines".
+        If you don’t see it, use the search bar at the top of the portal and search for "Virtual Machines".
+
+    Create a New Virtual Machine
+        Click on the "+ Create" button and select "Azure virtual machine".
+
+    Basics Tab: Configure Basic Settings
+        Subscription: Select the subscription where you want to create the VM.
+        Resource Group: Either select an existing resource group or create a new one... I recommend creating a new resourcegroup 
+        Virtual Machine Name: Enter a name for your VM (e.g., BiokuVM).
+        Region: Choose the region where the VM will be deployed (e.g., East US).
+        Availability Options: Select the availability options (e.g., no infrastructure redundancy required or availability zones).
+        Image: Select the OS image for your VM (e.g., Ubuntu, Windows Server 2019, etc.).
+        Size: Choose the VM size based on the required CPU, memory, and storage. Use the "See all sizes" link to explore other options.
+        Administrator Account:
+            Username: Enter a username for the admin account.
+            Authentication Type: Choose either a password or SSH public key.
+            Password/SSH Key: Enter a strong password or upload your SSH public key (if selected).
+
+    Disks Tab: Configure Storage
+        OS Disk Type: Choose the disk type (Standard HDD, Standard SSD, or Premium SSD).
+        Enable Disk Encryption: Optionally enable disk encryption.
+        Add Data Disks: If needed, attach additional data disks for your VM.
+
+    Networking Tab: Configure Network Settings
+        Virtual Network: Choose an existing virtual network or create a new one.
+        Subnet: Select or create a subnet within the virtual network.
+        Public IP: Create a new public IP address or use an existing one.
+        NIC Network Security Group: Choose an existing network security group (NSG) or allow the portal to create a basic one for you.
+        Inbound Port Rules: Select which ports to open. Common options include:
+            RDP (3389) for Windows VMs.
+            SSH (22) for Linux VMs.
+
+    Management Tab: Configure Management Options
+        Boot Diagnostics: Enable boot diagnostics for troubleshooting.
+        Auto-Shutdown: Optionally enable auto-shutdown and set the time.
+        Backup: Enable backup if required.
+
+    Advanced Tab: Additional Configuration (Optional)
+        Configure custom data, cloud-init, or extensions if needed.
+
+    Tags Tab: Add Tags (Optional)
+        Add tags to organize and categorize your resources (e.g., Environment: Development).
+
+    Review + Create
+        Review all the configurations you’ve made.
+        Azure will validate your configurations. If there are no issues, click "Create" to deploy the VM.
+
+    Deployment
+        Wait for the deployment to complete. This may take a few minutes.
+        Once completed, you will see a notification, and the VM will be listed under Virtual Machines.
+
+    Access the Virtual Machine
+        Go to the newly created VM in the Azure portal.
+        Note the public IP address.
+        Use an SSH client (for Linux) or Remote Desktop Connection (for Windows) to connect to the VM:
+            For Linux:
+
+            ssh <username>@<public-ip-address>
+
+            For Windows:
+                Open Remote Desktop Connection, enter the public IP address, and log in with the admin credentials you set.

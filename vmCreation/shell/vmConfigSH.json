@@ -1,0 +1,14 @@
+
+    {
+        "resourceGroupName": "rg_biokuResources",
+        "location": "uk west",
+        "vmName": "biokuVM",
+        "vnetName": "biokuVnet",
+        "subnetName": "biokuSubnet",
+        "nicName": "biokuNIC",
+        "publicIpName": "biokuPublicIP",
+        "nsgName": "biokuNSG",
+        "password":"Pa33w0rd_Sh$$l"
+    }
+    
+
